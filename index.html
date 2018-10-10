@@ -7,16 +7,17 @@
 </head>
 <body>
 
-  <nav>JEOPARDY!</nav>
+  <nav>JEOPARDY!
+    <div class="game-control">
+      <button class="start-reset-btn">Start/Reset</button>
+      <button class="quit-btn">Quit</button>
+    </div>
+  </nav>
 
   <aside class="host-section">
-    <div class="host-prompt"></div>
+    <div class="host-prompt">Let's play JEOPARDY! Gather your friends and hit the 'Start' button!</div>
     <div class="host-img"></div>
     <div class="host-desk"></div>
-    <div class="game-control">
-      <button class="start-quit-btn">Start</button>
-      <button class="reset-btn">Reset</button>
-    </div>
   </aside>
 
   <main class="game-board-section">
@@ -75,9 +76,9 @@
     </section>
   </footer>
 </body>
+<script type="text/javascript" src="js/classes/game.js"></script>
 <script type="text/javascript" src="js/classes/dailyDouble.js"></script>
 <script type="text/javascript" src="js/classes/question.js"></script>
 <script type="text/javascript" src="js/classes/player.js" ></script>
-<script type="text/javascript" src="js/classes/game.js"></script>
 <script type="text/javascript" src="index.js"></script>
 </html>
