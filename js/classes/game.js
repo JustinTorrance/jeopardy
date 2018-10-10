@@ -15,9 +15,9 @@ class Game {
   };
 
   startGame() {
-    let playerOne = new Player(this.round, undefined, this.gameState, undefined, 0, 1);
-    let playerTwo = new Player(this.round, undefined, this.gameState, undefined, 0, 2);
-    let playerThree = new Player(this.round, undefined, this.gameState, undefined, 0, 3);
+    playerOne = new Player(this.round, undefined, this.gameState, undefined, 0, 1);
+    playerTwo = new Player(this.round, undefined, this.gameState, undefined, 0, 2);
+    playerThree = new Player(this.round, undefined, this.gameState, undefined, 0, 3);
     this.appendNamesAndScores(playerOne, playerTwo, playerThree);
   }
 

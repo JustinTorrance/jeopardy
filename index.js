@@ -2,6 +2,8 @@ const gameBoard = document.querySelector('.game-board-section');
 const startResetBtn = document.querySelector('.start-reset-btn');
 const quitBtn = document.querySelector('.quit-btn');
 
+
+
 gameBoardDelegator = (e) => {
   return e.target.classList.contains('category-1-1') ? console.log('cat1 q1') :
   e.target.classList.contains('category-2-1') ? console.log('cat2 q1') :
@@ -28,8 +30,15 @@ gameBoardDelegator = (e) => {
 
 gameBoard.addEventListener('click', gameBoardDelegator);
 
+let newGame;
+let playerOne;
+let playerTwo;
+let playerThree;
+let question;
+let dailyDouble;
+
 startResetBtn.addEventListener('click', function() {
-  let newGame = new Game(1, ['playerOne', 'playerTwo', 'playerThree'], 'running');
+  newGame = new Game(1, ['playerOne', 'playerTwo', 'playerThree'], 'running');
   newGame.startGame();
 })
 
