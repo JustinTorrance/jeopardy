@@ -14,11 +14,16 @@ class Game {
       document.querySelector('.player-three-score').innerHTML = playerThree.score;
   };
 
+  populateGameBoard() {
+    
+  }
+
   startGame() {
     playerOne = new Player(this.round, undefined, this.gameState, undefined, 0, 1);
     playerTwo = new Player(this.round, undefined, this.gameState, undefined, 0, 2);
     playerThree = new Player(this.round, undefined, this.gameState, undefined, 0, 3);
     this.appendNamesAndScores(playerOne, playerTwo, playerThree);
+    populateGameBoard()
   }
 
   quitGame() {
