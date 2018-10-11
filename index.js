@@ -28,8 +28,6 @@ gameBoardDelegator = (e) => {
   console.log('error');
 };
 
-gameBoard.addEventListener('click', gameBoardDelegator);
-
 let newGame;
 let playerOne;
 let playerTwo;
