@@ -1,6 +1,6 @@
 class DailyDouble extends Questions {
-  constructor(round, players, gameState, categoryId, question, answer, pointValue, wagerInput) {
-    super(round, players, gameState, categoryId, question, answer, pointValue);
+  constructor(round, gameState, categoryId, question, answer, pointValue, wagerInput) {
+    super(round, gameState, categoryId, question, answer, pointValue);
     this.wagerInput = wagerInput;
     //should wager input be a method?
   }
@@ -9,4 +9,8 @@ class DailyDouble extends Questions {
 
   }
 
+}
+
+if (typeof module !== 'undefined') {
+module.exports = DailyDouble;
 }

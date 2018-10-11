@@ -1,0 +1,25 @@
+{
+  "name": "jeopardy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustinTorrance/jeopardy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustinTorrance/jeopardy/issues"
+  },
+  "homepage": "https://github.com/JustinTorrance/jeopardy#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-spies": "^1.0.0",
+    "mocha": "^5.2.0"
+  }
+}
