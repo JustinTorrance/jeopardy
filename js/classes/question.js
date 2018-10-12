@@ -1,6 +1,6 @@
 class Questions extends Game {
-  constructor(round, players, gameState, categoryId, question, answer, pointValue) {
-    super(round, players, gameState);
+  constructor(round, gameState, categoryId, question, answer, pointValue) {
+    super(round, gameState);
     this.categoryId = categoryId;
     this.question = question;
     this.answer = answer;
@@ -11,4 +11,8 @@ class Questions extends Game {
     //in round 2, double point value
   }
 
+}
+
+if (typeof module !== 'undefined') {
+module.exports = Questions;
 }
