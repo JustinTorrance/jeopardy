@@ -1,6 +1,13 @@
 const gameBoard = document.querySelector('.game-board-section');
 const startResetBtn = document.querySelector('.start-reset-btn');
-const quitBtn = document.querySelector('.quit-btn');
+const catOne = document.querySelector('.category-1');
+const catTwo = document.querySelector('.category-2');
+const catThree = document.querySelector('.category-3');
+const catFour = document.querySelector('.category-4');
+const catOneCluesNodes = document.querySelectorAll('.one');
+const catTwoCluesNodes = document.querySelectorAll('.two');
+const catThreeCluesNodes = document.querySelectorAll('.three');
+const catFourCluesNodes = document.querySelectorAll('.four');
 
 
 

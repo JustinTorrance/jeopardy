@@ -23,6 +23,27 @@ let domUpdates = {
 
 domUpdates.updateHostPrompt("Welcome to Jeopardy! Gather your friends and press 'START' to begin a new game!")
 
+const categoryCluesArr = (categoryNum) => {
+  let pointVal = 100;
+  let cluesArr = data.clues.reduce((arr, currentClue) => {
+    if (currentClue.categoryId === categoryNum && currentClue.pointValue === pointVal) {
+      arr.push(currentClue);
+      pointVal += 100;
+    };
+      return arr;
+    }, []).map((currentClue) => {
+      return currentClue.question + currentClue.pointValue;
+    });
+  return cluesArr;
+};
+
+let catOneClues = categoryCluesArr(1);
+let catTwoClues = categoryCluesArr(2);
+let catThreeClues = categoryCluesArr(3);
+let catFourClues = categoryCluesArr(4);
+
+
+
 
 
 if (typeof module !== 'undefined') {
