@@ -1,9 +1,9 @@
 class Player extends Game {
-  constructor(round, players, gameState, playerName, playerNum, score) {
+  constructor(round, players, gameState, playerNum, playerName) {
     super(round, players, gameState);
     this.playerNum = playerNum;
-    this.playerName = prompt(`Player ${playerNum}, enter your name!`);
-    this.score = score;
+    this.score = 0;
+    this.playerName = playerName;
   }
 
   submitAnswer() {

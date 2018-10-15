@@ -52,8 +52,8 @@ nav {
   justify-content: space-between;
 }
 
-.start-reset-btn,
-.quit-btn {
+.start-btn,
+.reset-btn {
   font-size: 1rem;
   width: 100px;
   text-align: center;
@@ -74,9 +74,9 @@ nav {
   outline: none;
 }
 
-.start-reset-btn:hover,
-.quit-btn:hover,
-.user-submit-btn:hover {
+.start-btn:hover,
+.reset-btn:hover,
+#user-submit-btn:hover {
   background-color: #fff;
   color: #0731B2;
   font-weight: bold;
@@ -108,7 +108,7 @@ form {
 
 }
 
-.user-input {
+#user-input {
   height: 70%;
   resize: none;
   border-radius: 10px;
@@ -117,11 +117,11 @@ form {
   padding: 5px 10px;
 }
 
-.user-input::placeholder {
+#user-input::placeholder {
   font-size: 1.3rem;
 }
 
-.user-submit-btn {
+#user-submit-btn {
   font-size: 1.1rem;
   border-radius: 8px;
   outline: none;
@@ -161,10 +161,11 @@ table {
 }
 
 td {
-  /*border: solid black 1px;*/
+  border: solid black 1px;
   grid-area: main;
-  min-width: 100px;
-  max-width: 175px;
+  width: 100px;
+  height: 100px;
+  font-size: .9rem;
 }
 
 .player {
