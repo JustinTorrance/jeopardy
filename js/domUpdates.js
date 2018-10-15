@@ -20,10 +20,39 @@ let domUpdates = {
   updateHostPrompt(string) {
     document.querySelector('.host-prompt').innerHTML = string;
   },
+
+  updateCategoryQuestions(categoryNum) {
+    categoryNum === 1 ? catOneCluesNodes.forEach((currentNode, i) => {
+      currentNode.innerHTML += `<span class="hidden">${catOneClues[i]}</span>`;
+    }):
+    categoryNum === 2 ? catTwoCluesNodes.forEach((currentNode, i) => {
+      currentNode.innerHTML += `<span class="hidden">${catTwoClues[i]}</span>`;
+    }):
+    categoryNum === 3 ? catThreeCluesNodes.forEach((currentNode, i) => {
+      currentNode.innerHTML += `<span class="hidden">${catThreeClues[i]}</span>`;
+    }):
+    categoryNum === 4 ? catFourCluesNodes.forEach((currentNode, i) => {
+      currentNode.innerHTML += `<span class="hidden">${catFourClues[i]}</span>`;
+    }): console.log('error in category update');
+  },
+
+  populateGameBoard() {
+    this.updateCategoryQuestions(1);
+    this.updateCategoryQuestions(2);
+    this.updateCategoryQuestions(3);
+    this.updateCategoryQuestions(4);
+  }
 }
 
 
 domUpdates.updateHostPrompt("Welcome to Jeopardy! Gather your friends and press 'START' to begin a new game!")
+
+
+
+
+
+
+
 
 
 
