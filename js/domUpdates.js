@@ -18,29 +18,37 @@ let domUpdates = {
 
   updateHostPrompt(string) {
     document.querySelector('.host-prompt').innerHTML = string;
+  },
+
+  updateCategoryQuestions(categoryNum) {
+    categoryNum === 1 ? catOneCluesNodes.forEach((currentNode, i) => {
+      currentNode.innerHTML += `<span class="hidden">${catOneClues[i]}</span>`;
+    }):
+    categoryNum === 2 ? catTwoCluesNodes.forEach((currentNode, i) => {
+      currentNode.innerHTML += `<span class="hidden">${catTwoClues[i]}</span>`;
+    }):
+    categoryNum === 3 ? catThreeCluesNodes.forEach((currentNode, i) => {
+      currentNode.innerHTML += `<span class="hidden">${catThreeClues[i]}</span>`;
+    }):
+    categoryNum === 4 ? catFourCluesNodes.forEach((currentNode, i) => {
+      currentNode.innerHTML += `<span class="hidden">${catFourClues[i]}</span>`;
+    }): console.log('error in category update');
+  },
+
+  populateGameBoard() {
+    this.updateCategoryQuestions(1);
+    this.updateCategoryQuestions(2);
+    this.updateCategoryQuestions(3);
+    this.updateCategoryQuestions(4);
   }
 }
 
 domUpdates.updateHostPrompt("Welcome to Jeopardy! Gather your friends and press 'START' to begin a new game!")
 
-const categoryCluesArr = (categoryNum) => {
-  let pointVal = 100;
-  let cluesArr = data.clues.reduce((arr, currentClue) => {
-    if (currentClue.categoryId === categoryNum && currentClue.pointValue === pointVal) {
-      arr.push(currentClue);
-      pointVal += 100;
-    };
-      return arr;
-    }, []).map((currentClue) => {
-      return currentClue.question + currentClue.pointValue;
-    });
-  return cluesArr;
-};
 
-let catOneClues = categoryCluesArr(1);
-let catTwoClues = categoryCluesArr(2);
-let catThreeClues = categoryCluesArr(3);
-let catFourClues = categoryCluesArr(4);
+
+
+
 
 
 

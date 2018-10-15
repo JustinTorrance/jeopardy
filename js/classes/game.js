@@ -1,7 +1,8 @@
 class Game {
-  constructor() {
+  constructor(round, players, gameState) {
     this.round = 1;
     this.gameState = 'standby';
+    this.players = players;
   }
 
 
@@ -14,18 +15,17 @@ class Game {
   //     document.querySelector('.player-three-score').innerHTML = playerThree.score;
   // };
 
-  populateGameBoard() {
-    
-  }
 
-  startGame() {
-    // playerOne = new Player(undefined, 0, 1);
-    // playerTwo = new Player(undefined, 0, 2);
-    // playerThree = new Player(undefined, 0, 3);
+
+  init() {
+    playerOne = new Player(undefined, undefined, undefined, undefined, 1, 0);
+    playerTwo = new Player(undefined, undefined, undefined, undefined, 2, 0);
+    playerThree = new Player(undefined, undefined, undefined, undefined, 3, 0);
     // this.appendNamesAndScores(playerOne, playerTwo, playerThree);
     // populateGameBoard()
     this.gameState = 'running';
-    updateHostPrompt('Player One, enter your name!')
+    domUpdates.populateGameBoard();
+    // updateHostPrompt('Player One, enter your name!')
   }
 
   quitGame() {
