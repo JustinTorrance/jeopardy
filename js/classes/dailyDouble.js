@@ -1,7 +1,11 @@
-class DailyDouble extends Questions {
-  constructor(round, gameState, categoryId, question, answer, pointValue, wagerInput) {
-    super(round, gameState, categoryId, question, answer, pointValue);
-    this.wagerInput = wagerInput;
+class DailyDouble extends Question {
+  constructor(round, gameState, categoryId, clue, answer, pointValue) {
+    super(round, gameState);
+    this.clue = clue;
+    this.answer = answer;
+    this.pointValue = pointValue;
+    // this.wagerInput = wagerInput;
+
     //should wager input be a method?
   }
 
