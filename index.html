@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <title>JEOPARDY!</title>
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Nanum+Brush+Script|Walter+Turncoat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles/reset.css">
   <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body>
-
-  <nav>JEOPARDY!
+  <nav>
     <div class="game-control">
-      <button class="start-reset-btn">Start/Reset</button>
+      <button class="start-reset-btn">Start</button>
       <button class="quit-btn">Quit</button>
     </div>
   </nav>
@@ -19,7 +20,7 @@
     <div class="host-img"></div>
     <div class="host-desk"></div>
     <form>
-      <input type="text" class="user-input">
+      <textarea type="text" class="user-input" placeholder="Enter your response here"></textarea> 
       <button class="user-submit-btn">Enter</button>
     </form>
   </aside>
@@ -67,23 +68,31 @@
 
   <footer class="player-panel-section">
     <section class="player player-one">
-      <div class="score player-one-score"></div>
-      <div class="name player-one-name"></div>
+      <div class="score player-one-score">$100</div>
+      <div class="name player-one-name">
+        <p class="player-one-name-p">Justin</p>
+      </div>
     </section>
     <section class="player player-two">
-      <div class="score player-two-score"></div>
-      <div class="name player-two-name"></div>
+      <div class="score player-two-score">$500</div>
+      <div class="name player-two-name">
+        <p class="player-two-name-p">Cody</p>
+      </div>
     </section>
     <section class="player player-three">
-      <div class="score player-three-score"></div>
-      <div class="name player-three-name"></div>
+      <div class="score player-three-score">$0</div>
+      <div class="name player-three-name">
+        <p class="player-three-name-p">Brittany</p>
+      </div>
     </section>
   </footer>
+
+<audio class="audio-intro" src="audio/intro.mp3" loop="true"></audio>
 </body>
 <script type="text/javascript" src="js/classes/game.js"></script>
 <script type="text/javascript" src="js/classes/question.js"></script>
 <script type="text/javascript" src="js/classes/dailyDouble.js"></script>
 <script type="text/javascript" src="js/classes/player.js" ></script>
-<script type="text/javascript" src="js/domUpdates.js"></script>
 <script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="js/domUpdates.js"></script>
 </html>

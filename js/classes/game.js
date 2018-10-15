@@ -2,6 +2,7 @@ class Game {
   constructor() {
     this.round = 1;
     this.gameState = 'standby';
+    this.players = [];
   }
 
 
@@ -17,15 +18,17 @@ class Game {
   populateGameBoard() {
     
   }
-
-  startGame() {
-    // playerOne = new Player(undefined, 0, 1);
-    // playerTwo = new Player(undefined, 0, 2);
-    // playerThree = new Player(undefined, 0, 3);
+//startGame
+  init() {
+    playerOne = new Player(undefined, 0, 1);
+    playerTwo = new Player(undefined, 0, 2);
+    playerThree = new Player(undefined, 0, 3);
+    this.players.push(playerOne, playerTwo, playerThree);
     // this.appendNamesAndScores(playerOne, playerTwo, playerThree);
     // populateGameBoard()
     this.gameState = 'running';
-    updateHostPrompt('Player One, enter your name!')
+    domUpdates.appendNamesAndScores(playerOne, playerTwo, playerThree);
+    domUpdates.updateHostPrompt('Player One, enter your name!')
   }
 
   quitGame() {

@@ -1,3 +1,4 @@
+
 let domUpdates = {  
   appendNamesAndScores(playerOne, playerTwo, playerThree) {
       document.querySelector('.player-one-name').innerHTML = playerOne.playerName;
@@ -18,8 +19,9 @@ let domUpdates = {
 
   updateHostPrompt(string) {
     document.querySelector('.host-prompt').innerHTML = string;
-  }
+  },
 }
+
 
 domUpdates.updateHostPrompt("Welcome to Jeopardy! Gather your friends and press 'START' to begin a new game!")
 
