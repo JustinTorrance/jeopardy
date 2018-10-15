@@ -2,7 +2,8 @@ class Game {
   constructor(round, players, gameState) {
     this.round = 1;
     this.gameState = 'standby';
-    this.players = players;
+
+    this.players = [];
   }
 
 
@@ -15,6 +16,10 @@ class Game {
   //     document.querySelector('.player-three-score').innerHTML = playerThree.score;
   // };
 
+  populateGameBoard() {
+    
+  }
+//startGame
 
 
   init() {
@@ -26,6 +31,7 @@ class Game {
     this.gameState = 'running';
     domUpdates.populateGameBoard();
     // updateHostPrompt('Player One, enter your name!')
+
   }
 
   quitGame() {

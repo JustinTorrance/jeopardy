@@ -1,5 +1,13 @@
 const gameBoard = document.querySelector('.game-board-section');
 const startResetBtn = document.querySelector('.start-reset-btn');
+const quitBtn = document.querySelector('.quit-btn');
+startResetBtn.addEventListener('click', playAudioIntro);
+
+function playAudioIntro(e) {
+  e.preventDefault();
+  document.querySelector('.audio-intro').play();
+}
+
 const catOne = document.querySelector('.category-1');
 const catTwo = document.querySelector('.category-2');
 const catThree = document.querySelector('.category-3');
@@ -14,6 +22,7 @@ const playerThreeName = document.querySelector('.player-three-name');
 const playerOneScore = document.querySelector('.player-one-score');
 const playerTwoScore = document.querySelector('.player-two-score');
 const playerThreeScore = document.querySelector('.player-three-score');
+
 
 gameBoardDelegator = (e) => {
   return e.target.classList.contains('category-1-1') ? e.target.childNodes[0].remove() + e.target.childNodes[0].classList.remove('hidden') :
@@ -48,7 +57,16 @@ let playerThree;
 let question;
 let dailyDouble;
 
-startResetBtn.addEventListener('click', function() {
+gameBoard.addEventListener('click', gameBoardDelegator);
+
+
+quitBtn.addEventListener('click', function() {
+  if (confirm('Are you sure you want to exit the game?')) {
+    window.close();
+  } else {
+    return;
+  };
+
   newGame = new Game(1, [], 'running');
   newGame.init();
 });
