@@ -6,41 +6,45 @@ class Game {
   }
 
   init() {
-    domUpdates.updateHostPrompt('Player One, enter your name!')
-    playerOne = new Player(undefined, undefined, undefined, 1);
-    playerTwo = new Player(undefined, undefined, undefined, 2);
-    playerThree = new Player(undefined, undefined, undefined, 3);
+    domUpdates.updateHostPrompt('Player One, enter your name below!')
+    // playerOne = new Player(undefined, undefined, undefined, 1);
+    // playerTwo = new Player(undefined, undefined, undefined, 2);
+    // playerThree = new Player(undefined, undefined, undefined, 3);
     // domUpdates.populateGameBoard();
   }
 
-  // createClueArray(catNum) {
-  //   let pointVal = 100;
-  //   let clueArr = data.clues.reduce((arr, currentClue) => {
-  //     if (currentClue.categoryId === catNum && pointVal === currentClue.pointValue) {
-  //       arr.push(currentClue);
-  //       question1 = new Question(undefined, undefined, currentClue.categoryId, currentClue.question, currentClue.answer, currentClue.pointValue);
-  //       pointVal += 100;
-  //     }
-  //     return arr;
-  //   }, []);
-  // return clueArr;
-  // }
+  incrementTurn() {
+    if (playerIndex === 2) {
+      playerIndex = 0;
+    } else {
+      playerIndex++;
+    }
+  }
 
- quitGame() {
+  activatePlayer() {
+    if (playerIndex === 0) {
+      this.players[0].active = true;
+    } else if (playerIndex === 1) {
+      this.players[1].active = true;
+    } else if (playerIndex === 2) {
+      this.players[2].active = true;
+    } else {
+      console.log('error in activatePlayer');
+    }
+  }
 
- }
+  quitGame() {
 
- incrementRoud() {
+  }
 
- }
+  incrementRoud() {
 
- declareWinner() {
+  }
 
- }
+  declareWinner() {
 
- rollDice() {
+  }
 
- }
 
  newTextPrompt(prompt) {
    return prompt;
