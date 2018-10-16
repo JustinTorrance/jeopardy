@@ -21,7 +21,7 @@ const data = {
   },
   clues: [ 
     {
-      question: "Scorecard Report\" & \"Peter Jacobsen Plugged In\" are seen on the sports channel devoted to this",
+      question: "Scorecard Report\" and \"Peter Jacobsen Plugged In\" are seen on the sports channel devoted to this",
       pointValue: 100,
       answer: "golf",
       categoryId: 10
@@ -123,7 +123,7 @@ const data = {
       categoryId: 9
     },
     {
-      question: "To mean a quarrel, vegetarians can use \"rhubarb\" & carnivores can use this",
+      question: "To mean a quarrel, vegetarians can use \"rhubarb\" and carnivores can use this",
       pointValue: 300,
       answer: "beef",
       categoryId: 9
@@ -147,7 +147,7 @@ const data = {
       categoryId: 9
     },
     {
-      question: "Be quiet little dog, & I'll feed you these deep fried concoctions made of corn meal",
+      question: "Be quiet little dog, and I'll feed you these deep fried concoctions made of corn meal",
       pointValue: 200,
       answer: "Hush Puppies",
       categoryId: 9
@@ -165,7 +165,7 @@ const data = {
       categoryId: 9
     },
     {
-      question: "Broccoflower, a relatively new vegetable, is a cross between broccoli & this",
+      question: "Broccoflower, a relatively new vegetable, is a cross between broccoli and this",
       pointValue: 500,
       answer: "cauliflower",
       categoryId: 9
@@ -225,13 +225,13 @@ const data = {
       categoryId: 8
     },
     {
-      question: "Juarez, Mexico & this Texas city make up the largest metropolitan center on the U.S.-Mexico border",
+      question: "Juarez, Mexico and this Texas city make up the largest metropolitan center on the U.S.-Mexico border",
       pointValue: 500,
       answer: "El Paso",
       categoryId: 8
     },
     {
-      question: "Earthquake City\" & \"Baghdad by the Bay\" are 2 nicknames of this California city",
+      question: "Earthquake City\" and \"Baghdad by the Bay\" are 2 nicknames of this California city",
       pointValue: 100,
       answer: "San Francisco",
       categoryId: 8
@@ -297,7 +297,7 @@ const data = {
       categoryId: 7
     },
     {
-      question: "This pioneer was a man, yes, a big man, & his bio won a Newbery Medal for James Daugherty",
+      question: "This pioneer was a man, yes, a big man, and his bio won a Newbery Medal for James Daugherty",
       pointValue: 200,
       answer: "Daniel Boone",
       categoryId: 7
@@ -363,7 +363,7 @@ const data = {
       categoryId: 7
     },
     {
-      question: "In 1978 Bob Thomas wrote \"Joan Crawford: A Biography\" & Christina Crawford wrote this",
+      question: "In 1978 Bob Thomas wrote \"Joan Crawford: A Biography\" and Christina Crawford wrote this",
       pointValue: 300,
       answer: "Mommie Dearest",
       categoryId: 7
@@ -387,7 +387,7 @@ const data = {
       categoryId: 6
     },
     {
-      question: "In this Steinbeck novel, a few buddies get drunk & make a shambles of the Western Biological Lab in Monterey",
+      question: "In this Steinbeck novel, a few buddies get drunk and make a shambles of the Western Biological Lab in Monterey",
       pointValue: 300,
       answer: "Cannery Row",
       categoryId: 6
@@ -399,7 +399,7 @@ const data = {
       categoryId: 6
     },
     {
-      question: "This captain of the Ghost rescues literary critic Humphrey Van Weyden & poet Maude Brewster from a shipwreck",
+      question: "This captain of the Ghost rescues literary critic Humphrey Van Weyden and poet Maude Brewster from a shipwreck",
       pointValue: 500,
       answer: "Wolf Larsen",
       categoryId: 6
@@ -411,7 +411,7 @@ const data = {
       categoryId: 6
     },
     {
-      question: "Harpooneers in this novel include Tashtego, Daggoo & Queequeg, a cannibal",
+      question: "Harpooneers in this novel include Tashtego, Daggoo and Queequeg, a cannibal",
       pointValue: 200,
       answer: "Moby Dick",
       categoryId: 6
@@ -459,7 +459,7 @@ const data = {
       categoryId: 6
     },
     {
-      question: "Among his pen names were Jonathan Oldstyle, Gentleman & Diedrich Knickerbocker",
+      question: "Among his pen names were Jonathan Oldstyle, Gentleman and Diedrich Knickerbocker",
       pointValue: 500,
       answer: "Washington Irving",
       categoryId: 6
@@ -537,13 +537,13 @@ const data = {
       categoryId: 3
     },
     { 
-      question: '(<a href="http://www.j-archive.com/media/2005-12-21_J_25.jpg" target="_blank">Hi!  I\'m CNN senior medical correspondent Dr. Sanjay Gupta.</a>)  I joined CNN in 2001 & reported on the biological attacks of this bacillus in the news that October',
+      question: '(<a href="http://www.j-archive.com/media/2005-12-21_J_25.jpg" target="_blank">Hi!  I\'m CNN senior medical correspondent Dr. Sanjay Gupta.</a>)  I joined CNN in 2001 and reported on the biological attacks of this bacillus in the news that October',
       answer: 'anthrax',
       pointValue: 300,
       categoryId: 3
     },
     { 
-      question: 'Stanford\'s med school has a division of this, the study & control of disease in populations',
+      question: 'Stanford\'s med school has a division of this, the study and control of disease in populations',
       answer: 'epidemiology',
       pointValue: 400,
       categoryId: 3
@@ -555,13 +555,13 @@ const data = {
       categoryId: 3
     },
     { 
-      question: 'Organic chemistry focuses specifically on this element\'s compounds & their reactions',
+      question: 'Organic chemistry focuses specifically on this element\'s compounds and their reactions',
       answer: 'carbon',
       pointValue: 100,
       categoryId: 2
     },
     { 
-      question: 'If you\'re a steak & veggies creature, you\'re an omnivore, a combination of these other 2 basic "-vores',
+      question: 'If you\'re a steak and veggies creature, you\'re an omnivore, a combination of these other 2 basic "-vores',
       answer: 'carnivore and herbivore',
       pointValue: 200,
       categoryId: 2
@@ -573,7 +573,7 @@ const data = {
       categoryId: 2
     },
     { 
-      question: '(<a href="http://www.j-archive.com/media/2009-04-28_DJ_22.wmv">Jimmy of the Clue Crew gets in his workout.</a>)  Physical activity increases both body temperature & this process in which food is converted to protein, carbs & fat & then used for energy',
+      question: '<a href="http://www.j-archive.com/media/2009-04-28_DJ_22.wmv">Jimmy of the Clue Crew gets in his workout.</a>  Physical activity increases both body temperature and this process in which food is converted to protein, carbs and fat and then used for energy',
       answer: 'metabolism',
       pointValue: 400,
       categoryId: 2
@@ -633,7 +633,7 @@ const data = {
       categoryId: 1
     },
     {
-      question: "In 10 minutes, this May 31, 1889 disaster destroyed a town & killed over 2,200 people",
+      question: "In 10 minutes, this May 31, 1889 disaster destroyed a town and killed over 2,200 people",
       pointValue: 400,
       answer: "The Johnstown Flood",
       categoryId: 1
@@ -681,7 +681,7 @@ const data = {
       categoryId: 1
     },
     {
-      question: "In 1864, not a hurricane, but this general caused a path of destruction almost 300 miles long & 60 wide",
+      question: "In 1864, not a hurricane, but this general caused a path of destruction almost 300 miles long and 60 wide",
       pointValue: 200,
       answer: "William T. Sherman",
       categoryId: 1
@@ -693,7 +693,7 @@ const data = {
       categoryId: 1
     },
     {
-      question: "This 1862 act gave American citizens 160 acres of land if they'd live on it for at least 5 years & improve it",
+      question: "This 1862 act gave American citizens 160 acres of land if they'd live on it for at least 5 years and improve it",
       pointValue: 400,
       answer: "The Homestead Act",
       categoryId: 1

@@ -164,7 +164,7 @@ td {
   border: solid black 1px;
   grid-area: main;
   width: 100px;
-  height: 100px;
+  height: 50px;
   font-size: .9rem;
 }
 
