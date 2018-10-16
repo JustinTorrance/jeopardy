@@ -25,16 +25,16 @@ let domUpdates = {
 
   updateCategoryQuestions(categoryNum) {
     categoryNum === 1 ? catOneCluesNodes.forEach((currentNode, i) => {
-      currentNode.innerHTML += `<span class="hidden">${catOneClues[i]}</span>`;
+      currentNode.innerHTML += `<span class="hidden">${catOneClues[i].question}</span>`;
     }):
     categoryNum === 2 ? catTwoCluesNodes.forEach((currentNode, i) => {
-      currentNode.innerHTML += `<span class="hidden">${catTwoClues[i]}</span>`;
+      currentNode.innerHTML += `<span class="hidden">${catTwoClues[i].question}</span>`;
     }):
     categoryNum === 3 ? catThreeCluesNodes.forEach((currentNode, i) => {
-      currentNode.innerHTML += `<span class="hidden">${catThreeClues[i]}</span>`;
+      currentNode.innerHTML += `<span class="hidden">${catThreeClues[i].question}</span>`;
     }):
     categoryNum === 4 ? catFourCluesNodes.forEach((currentNode, i) => {
-      currentNode.innerHTML += `<span class="hidden">${catFourClues[i]}</span>`;
+      currentNode.innerHTML += `<span class="hidden">${catFourClues[i].question}</span>`;
     }): console.log('error in category update');
   },
 
