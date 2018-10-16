@@ -23,6 +23,13 @@ let domUpdates = {
     document.querySelector('.host-prompt').innerHTML = string;
   },
 
+  updateCategories() {
+    catOne.innerText = roundOneCategories[0];
+    catTwo.innerText = roundOneCategories[1];
+    catThree.innerText = roundOneCategories[2];
+    catFour.innerText = roundOneCategories[3];
+  },
+
   updateCategoryQuestions(categoryNum) {
     categoryNum === 1 ? catOneCluesNodes.forEach((currentNode, i) => {
       currentNode.innerHTML += `<span class="hidden">${catOneClues[i].question}</span>`;
