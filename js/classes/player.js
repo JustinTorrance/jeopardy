@@ -14,13 +14,12 @@ class Player extends Game {
       }
     })
 
-    if (answer.toLowerCase().includes(activeQuestion.answer.toLowerCase())) {
+    if (activeQuestion.answer.toLowerCase().includes(answer.toLowerCase())) {
       newGame.players.find((currentPlayer) => {
         if (currentPlayer.active) {
           currentPlayer.score += activeQuestion.pointValue;
           domUpdates.updateNamesAndScores();
           currentPlayer.active = false;
-
         }
       })
     } else {
@@ -32,8 +31,15 @@ class Player extends Game {
         }
       })
     }
+    activeQuestion.active = false;
     newGame.incrementTurn();
     newGame.activatePlayer();
+    let activePlayer = newGame.players.find((currentPlayer) => {
+      if (currentPlayer.active) {
+        return currentPlayer;
+      }
+    })
+    domUpdates.updateHostPrompt(`${activePlayer.playerName}, Please select the next question from the game board!`)
   }
 
   submitWager() {

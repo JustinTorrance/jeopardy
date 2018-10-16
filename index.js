@@ -101,6 +101,18 @@ function createClueArrays() {
   catFourClues = createClueArray(4);
 }
 
+const setCategories = () => {
+  let categoriesArray = []
+  Object.keys(data.categories).forEach((currentKey) => {
+    if (!categoriesArray.includes(currentKey) && categoriesArray.length < 4) {
+      categoriesArray.push(currentKey);
+    }
+  })
+  return categoriesArray
+}
+
+let roundOneCategories = setCategories();
+
 questionIndex = 0;
 playerIndex = 0;
 
@@ -123,6 +135,7 @@ startBtn.addEventListener('click', function() {
   newGame.init();
   createClueArrays();
   domUpdates.populateGameBoard();
+  domUpdates.updateCategories();
 });
 
 resetBtn.addEventListener('click', function() {
