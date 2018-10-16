@@ -22,6 +22,9 @@ const playerThreeScore = document.querySelector('.player-three-score');
 let playerOne;
 let playerTwo;
 let playerThree;
+let newGame;
+let question;
+let dailyDouble;
 
 startBtn.addEventListener('click', playAudioIntro);
 
@@ -46,11 +49,11 @@ submitBtn.addEventListener('click', function(e) {
 function playAudioIntro(e) {
   e.preventDefault();
   document.querySelector('.audio-intro').play();
-}
+};
 
 const gameBoardArray = ['category-1-1', 'category-1-2', 'category-1-3', 'category-1-4', 'category-1-5', 'category-2-1', 'category-2-2', 'category-2-3', 
 'category-2-4', 'category-2-5', 'category-3-1', 'category-3-2', 'category-3-3', 'category-3-4', 'category-3-5', 'category-4-1', 'category-4-2', 
-'category-4-3', 'category-4-4', 'category-4-5']
+'category-4-3', 'category-4-4', 'category-4-5'];
 
 gameBoardDelegator = (e) => {
   gameBoardArray.find((currentTD) => {
@@ -58,59 +61,62 @@ gameBoardDelegator = (e) => {
       e.target.childNodes[0].remove();
       hostPrompt.innerHTML = e.target.innerHTML;
       hostPrompt.childNodes[0].classList.remove('hidden');
-    }
+    };
   });
 };
 
 gameBoard.addEventListener('click', gameBoardDelegator);
+
+function createClueArrays() {
+  catOneClues = createClueArray(1);
+  catTwoClues = createClueArray(2);
+  catThreeClues = createClueArray(3);
+  catFourClues = createClueArray(4);
+}
+
+questionNamesArray = ['question1', 'question2', 'question3', 'question4', 'question5'
+'question6', 'question7', 'question8', 'question9', 'question10', 'question11', 'question12',
+'question13', 'question14', 'question15', 'question16', 'question17', 'question18',
+'question19', 'question20'];
+
+function createClueArray(catNum) {
+  let pointVal = 100;
+  let index = 0;
+  let clueArr = data.clues.reduce((arr, currentClue) => {
+    if (currentClue.categoryId === catNum && pointVal === currentClue.pointValue) {
+      arr.push(currentClue);
+      console.log(questionNamesArray[index]);
+      // questionNamesArray[index] = new Question(undefined, undefined, 'running', currentClue.categoryId, currentClue.question, currentClue.answer, currentClue.pointValue);
+      pointVal += 100;
+      index++;
+    }
+    return arr;
+  }, []);
+return clueArr;
+}
 
 startBtn.addEventListener('click', function() {
   newGame = new Game(1, [], 'running');
   newGame.init();
-})
+  createClueArrays();
+  domUpdates.populateGameBoard();
+  // let categoryId;
+  // let clue;
+  // let answer;
+  // let pointValue;
+  // for(let i = 1; i < 21; i++) {
+  //   question[i] = new Question(undefined, undefined, categoryId, clue, answer, pointValue);
+  // };
+});
 
 resetBtn.addEventListener('click', function() {
   newGame = new Game(0, [], 'standby');
   document.querySelector('.audio-intro').pause();
-
-  });
-
-let init;
-let question;
-let dailyDouble;
+});
 
 gameBoard.addEventListener('click', gameBoardDelegator);
 
-
-
-
-const categoryCluesArr = (categoryNum) => {
-  let pointVal = 100;
-  let cluesArr = data.clues.reduce((arr, currentClue) => {
-    if (currentClue.categoryId === categoryNum && currentClue.pointValue === pointVal) {
-      arr.push(currentClue);
-      pointVal += 100;
-    };
-      return arr;
-    }, []).map((currentClue) => {
-      return currentClue.question;
-    });
-  return cluesArr;
-};
-
-let catOneClues = categoryCluesArr(1);
-let catTwoClues = categoryCluesArr(2);
-let catThreeClues = categoryCluesArr(3);
-let catFourClues = categoryCluesArr(4);
-
-
-
-
-
-
-
-
-// let playerOneName = prompt('enter player one');
-// let playerTwoName = prompt('enter player two');
-// let playerThreeName = prompt('enter player three');
-
+// let catOneClues = categoryCluesArr(1);
+// let catTwoClues = categoryCluesArr(2);
+// let catThreeClues = categoryCluesArr(3);
+// let catFourClues = categoryCluesArr(4);
