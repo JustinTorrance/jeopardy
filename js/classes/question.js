@@ -1,6 +1,6 @@
 class Question extends Game {
   constructor(round, players, gameState, name, categoryId, question, answer, pointValue, wager) {
-    super(round, players, gameState);
+    super(round);
     this.name = name;
     this.categoryId = categoryId;
     this.question = question;
@@ -23,19 +23,6 @@ class Question extends Game {
     } else {
       domUpdates.updateHostPrompt(`That's an invalid wager! Please enter a wager between 5 and ${newGame.activePlayer().score}.`)
     }
-  }
-
-
-  activateQuestion() {
-
-  }
-
-
-
-
-
-  changePointValue() {
-    //in round 2, double point value
   }
 }
 

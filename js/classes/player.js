@@ -3,20 +3,9 @@ class Player extends Game {
     super(round, players, gameState);
     this.playerNum = playerNum;
     this.score = 0;
-    this.playerName = playerName;
+    this.playerName = playerName || `player ${this.playerNum}`;
     this.active = active || false;
   }
-
-//when player clicks on question, question will state whether it is daily double
-//if daily double = true, host asks to input a wager prior to revealing questions
-//wager is checked for validity
-//if valid, question is revealed
-//player inputs answer
-//if answer is correct, wager amount is added to score
-//if incorrect, wager amount is subtracted from score
-// current player becomes inactive
-//activate next player
-
 
   submitAnswer(answer) {
     let activeQuestion = questionsArray.find((currentQuestion) => {
@@ -50,14 +39,6 @@ class Player extends Game {
       }
     })
     domUpdates.updateHostPrompt(`${activePlayer.playerName}, Please select the next question from the game board!`)
-  }
-
-  submitWager() {
-
-  }
-
-  updateScore() {
-
   }
 }
 

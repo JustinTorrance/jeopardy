@@ -97,7 +97,7 @@ aside {
 }
 
 .host-prompt {
-  height: 90px;
+  height: 110px;
   background-color: white;
   /*border: black solid 1px;*/
   color: black;
@@ -112,8 +112,8 @@ aside {
 }
 
 .host-alex {
-  height: 340px;
-  width: 400px;
+  height: 300px;
+  width: 340px;
 
 }
 
@@ -191,18 +191,23 @@ table {
 }
 
 td {
-  border: solid black 4px;
+  border: solid black 2px;
   grid-area: main;
   width: 100px;
-  height: 50px;
+  height: 5px;
   font-size: 2rem;
   text-align: center;
   text-shadow: 2px 2px 2px black;
-  padding: 35px;
+  padding: 15px;
 }
 
-td:hover {
-  border: solid yellow 4px;
+.one:hover,
+.two:hover,
+.three:hover,
+.four:hover {
+  color: yellow;
+  transition-duration: 0.3s;
+  cursor: pointer;
 }
 
 
