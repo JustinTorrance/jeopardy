@@ -33,6 +33,15 @@ class Game {
     }
   }
 
+  activePlayer() {
+   let activePlayer = this.players.find((currentPlayer) => {
+     if (currentPlayer.active) {
+       return currentPlayer;
+     };
+   });
+   return activePlayer;
+  }
+
   quitGame() {
 
   }
