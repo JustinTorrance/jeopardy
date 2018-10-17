@@ -18,6 +18,7 @@ const playerThreeName = document.querySelector('.player-three-name');
 const playerOneScore = document.querySelector('.player-one-score');
 const playerTwoScore = document.querySelector('.player-two-score');
 const playerThreeScore = document.querySelector('.player-three-score');
+const hostBtn = document.querySelector('.host-btn');
 
 let playerOne;
 let playerTwo;
@@ -144,3 +145,7 @@ resetBtn.addEventListener('click', function() {
 });
 
 gameBoard.addEventListener('click', gameBoardDelegator);
+
+hostBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+})
