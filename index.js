@@ -18,8 +18,8 @@ const playerThreeName = document.querySelector('.player-three-name');
 const playerOneScore = document.querySelector('.player-one-score');
 const playerTwoScore = document.querySelector('.player-two-score');
 const playerThreeScore = document.querySelector('.player-three-score');
-const hostBtn = document.querySelector('.host-btn');
 
+let activeQuestion;
 let playerOne;
 let playerTwo;
 let playerThree;
@@ -30,31 +30,51 @@ let dailyDouble;
 startBtn.addEventListener('click', playAudioIntro);
 
 function submitConditional(answer) {
-  if (playerOne.active) {
+  findActiveQuestion();
+  if (activeQuestion.dailyDouble && newGame.activePlayer().score >= 5) {
+    activeQuestion.checkWagerValidity();
+  } else if (activeQuestion.dailyDouble) {
+    activeQuestion.dailyDouble = false;
+    activeQuestion.pointValue *= 2;
+    domUpdates.updateHostPrompt(`You selected the Daily Double! Since your score is below 5, we've doubled the dollar amount! ${activeQuestion.question}`)
+  } else if (playerOne.active) {
     playerOne.submitAnswer(answer)
   } else if (playerTwo.active) {
     playerTwo.submitAnswer(answer)
   } else if (playerThree.active) {
     playerThree.submitAnswer(answer)
-  }
+  } 
+  userInput.value = '';
 }
+
+
+
 
 submitBtn.addEventListener('click', function(e) {
   e.preventDefault();
   if (hostPrompt.innerText.includes('Player One')) {
     playerOne = new Player(undefined, undefined, undefined, 1, userInput.value, true);
     newGame.players.push(playerOne);
+    questionsArray.forEach((currentQuestion) => {
+      currentQuestion.players.push(playerOne)
+    })
     userInput.value = '';
     domUpdates.updateHostPrompt('Player Two, enter your name!');
   } else if (hostPrompt.innerText.includes('Player Two')) {
     playerTwo = new Player(undefined, undefined, undefined, 2, userInput.value);
     newGame.players.push(playerTwo);
+    questionsArray.forEach((currentQuestion) => {
+      currentQuestion.players.push(playerTwo)
+    })
     userInput.value = '';
     domUpdates.updateHostPrompt('Player Three, enter your name!');
   } else if (hostPrompt.innerText.includes('Player Three')) {
     playerThree = new Player(undefined, undefined, undefined, 3, userInput.value);
     userInput.value = '';
     newGame.players.push(playerThree);
+    questionsArray.forEach((currentQuestion) => {
+      currentQuestion.players.push(playerThree)
+    })
     domUpdates.updateNamesAndScores()
     domUpdates.updateHostPrompt(`${playerOne.playerName}, pick a category dollar amount`);
   } else {
@@ -76,7 +96,16 @@ questionsArray = ['question1', 'question2', 'question3', 'question4', 'question5
 'question13', 'question14', 'question15', 'question16', 'question17', 'question18',
 'question19', 'question20'];
 
+function findActiveQuestion() {
+  activeQuestion = questionsArray.find((currentQuestion) => {
+    if (currentQuestion.active === true) {
+      return currentQuestion
+    }
+  });
+}
+
 gameBoardDelegator = (e) => {
+  findActiveQuestion();
   let selectedQuestion;
   questionsArray.forEach((currentQuestion) => {
     if (currentQuestion.question === e.target.childNodes[1].innerText) {
@@ -94,6 +123,10 @@ gameBoardDelegator = (e) => {
       hostPrompt.childNodes[0].classList.remove('hidden');
     };
   });
+  if (selectedQuestion.dailyDouble) {
+    console.log('double is CLICKED');
+    submitConditional()
+  }
 };
 
 gameBoard.addEventListener('click', gameBoardDelegator);
@@ -125,7 +158,7 @@ function createClueArray(catNum) {
   let clueArr = data.clues.reduce((arr, currentClue) => {
     if (currentClue.categoryId === catNum && pointVal === currentClue.pointValue) {
       arr.push(currentClue);
-      questionsArray[questionIndex] = new Question(undefined, undefined, 'running', questionsArray[questionIndex], currentClue.categoryId, currentClue.question, currentClue.answer, currentClue.pointValue);
+      questionsArray[questionIndex] = new Question(undefined, [], 'running', questionsArray[questionIndex], currentClue.categoryId, currentClue.question, currentClue.answer, currentClue.pointValue);
       pointVal += 100;
       questionIndex++;
     };
@@ -157,5 +190,6 @@ function dailyDoubleRandomizer() {
   console.log('daily double invoked')
   let multBy20 = Math.floor(Math.random() * 20);
   questionsArray[multBy20].dailyDouble = true;
+  console.log('durble:', multBy20)
 }
 

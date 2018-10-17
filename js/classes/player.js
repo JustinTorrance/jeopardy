@@ -7,13 +7,23 @@ class Player extends Game {
     this.active = active || false;
   }
 
+//when player clicks on question, question will state whether it is daily double
+//if daily double = true, host asks to input a wager prior to revealing questions
+//wager is checked for validity
+//if valid, question is revealed
+//player inputs answer
+//if answer is correct, wager amount is added to score
+//if incorrect, wager amount is subtracted from score
+// current player becomes inactive
+//activate next player
+
+
   submitAnswer(answer) {
     let activeQuestion = questionsArray.find((currentQuestion) => {
       if (currentQuestion.active === true) {
         return currentQuestion
       }
     })
-
     if (activeQuestion.answer.toLowerCase().includes(answer.toLowerCase())) {
       newGame.players.find((currentPlayer) => {
         if (currentPlayer.active) {

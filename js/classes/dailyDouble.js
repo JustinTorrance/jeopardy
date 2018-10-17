@@ -6,23 +6,17 @@ class DailyDouble extends Question {
     this.pointValue = pointValue;
   }
 
+//   checkWagerValidity() {
+//     console.log('hooked up')
+//     if (parseInt(userInput.value) <= player.score && parseInt(userInput.value >= 5)) {
+//       console.log('valid wager')
+//     } else {
+//       console.log('sorry, invalid wager')
+//     }
 
-
-  checkWagerValidity() {
-    if (parseInt(userInput.value) <= player.score && parseInt(userInput.value >= 0)) {
-      // host
-    }
-
-  }
-
-
-
-
+//   }
 }
 
-if (typeof module !== 'undefined') {
-module.exports = DailyDouble;
-}
 
 
 //give all questions property of dailyDouble = false;
@@ -36,3 +30,8 @@ module.exports = DailyDouble;
 //if user's answer matches actual answer, player.score += wager;
 //deactivate player
 //increment playerIndex
+
+
+if (typeof module !== 'undefined') {
+module.exports = DailyDouble;
+}
