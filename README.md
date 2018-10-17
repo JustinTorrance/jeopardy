@@ -15,3 +15,6 @@ If your answer is correct, you win the dollar amount. Guess incorrectly, and you
 ## Authors
 * Justin Torrance
 * Cody Price
+
+## Link to DTR and Wireframe
+https://docs.google.com/document/d/1ZwhheJwVHP0zVeu0l8aznQajnOhOeWQY3rXbqMzXrDI/edit?usp=sharing
