@@ -23,9 +23,20 @@ Justin wagered 95 and guessed incorrectly. Now his score is only 5:
 * CSS
 * JavaScript
 
+## Set Up
+
+Clone the repo
+
+~Run npm install from the root directory~
+
+~Run npm start and visit localhost:3000 in your browser~
+
 ## Testing
-* Mocha
-* Chai
+Jeopardy uses Mocha and Chai for testing
+
+~Run with npm test from the associated root directory~
+
+
 
 ## Authors
 * Justin Torrance
