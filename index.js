@@ -93,9 +93,6 @@ gameBoardDelegator = (e) => {
       hostPrompt.childNodes[0].classList.remove('hidden');
     };
   });
-  if (selectedQuestion.dailyDouble === true) {
-
-  }
 };
 
 gameBoard.addEventListener('click', gameBoardDelegator);
