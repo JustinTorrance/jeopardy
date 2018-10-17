@@ -82,6 +82,9 @@ gameBoardDelegator = (e) => {
     if (currentQuestion.question === e.target.childNodes[1].innerText) {
       selectedQuestion = currentQuestion;
       selectedQuestion.active = true;
+    } else if (currentQuestion.question === e.target.childNodes[1].innerHTML) {
+      selectedQuestion = currentQuestion;
+      selectedQuestion.active = true;
     };
   });
   gameBoardArray.find((currentTD) => {
@@ -135,6 +138,7 @@ startBtn.addEventListener('click', function() {
   newGame = new Game(1, [], 'running');
   newGame.init();
   createClueArrays();
+  dailyDoubleRandomizer();
   domUpdates.populateGameBoard();
   domUpdates.updateCategories();
 });
@@ -148,4 +152,10 @@ gameBoard.addEventListener('click', gameBoardDelegator);
 
 hostBtn.addEventListener('click', function(e) {
   e.preventDefault();
-})
+
+function dailyDoubleRandomizer() {
+  console.log('daily double invoked')
+  let multBy20 = Math.floor(Math.random() * 20);
+  questionsArray[multBy20].dailyDouble = true;
+}
+

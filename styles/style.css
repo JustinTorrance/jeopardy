@@ -194,7 +194,7 @@ td {
   border: solid black 4px;
   grid-area: main;
   width: 100px;
-  height: 5px;
+  height: 50px;
   font-size: 2rem;
   text-align: center;
   text-shadow: 2px 2px 2px black;
