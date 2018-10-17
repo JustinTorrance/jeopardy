@@ -7,6 +7,7 @@ class Question extends Game {
     this.answer = answer;
     this.pointValue = pointValue;
     this.active = false;
+    this.dailyDouble = false;
   }
 
   activateQuestion() {
