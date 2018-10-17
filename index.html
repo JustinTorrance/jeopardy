@@ -18,8 +18,8 @@
   <aside class="host-section">
     <div class="host-prompt"></div>
     <div class="host-img"></div>
-    <div class="host-desk"></div>
     <form>
+      <button class="host-btn"><img src="images/transparant-alex.png" class="host-alex"></button>
       <textarea type="text" id="user-input" placeholder="Enter your response here"></textarea> 
       <button id="user-submit-btn">Enter</button>
     </form>
@@ -28,10 +28,10 @@
   <main class="game-board-section">
       <table>
         <tr class="categories-row">
-          <td class="category-1"></td>
-          <td class="category-2"></td>
-          <td class="category-3"></td>
-          <td class="category-4"></td>
+          <td class="category-1 cat-row"></td>
+          <td class="category-2 cat-row"></td>
+          <td class="category-3 cat-row"></td>
+          <td class="category-4 cat-row"></td>
         </tr>
         <tr class="questions-row">
           <td class="one category-1-1">$100</td>
@@ -64,6 +64,7 @@
           <td class="four category-4-5">$500</td>
         </tr>
       </table>
+      <div class="gameboard-overlay"></div>
   </main>
 
   <footer class="player-panel-section">
@@ -87,7 +88,7 @@
     </section>
   </footer>
 
-<audio class="audio-intro" src="audio/intro.mp3" loop="true"></audio>
+<audio class="audio-intro" src="audio/intro.mp3" loop="false"></audio>
 </body>
 <script type="text/javascript" src="js/data.js"></script>
 <script type="text/javascript" src="js/classes/game.js"></script>

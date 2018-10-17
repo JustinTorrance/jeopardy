@@ -1,7 +1,6 @@
 
 let domUpdates = {  
   updateNamesAndScores() {
-
       document.querySelector('.player-one-name').innerHTML = playerOne.playerName;
       document.querySelector('.player-two-name').innerHTML = playerTwo.playerName;
       document.querySelector('.player-three-name').innerHTML = playerThree.playerName;
