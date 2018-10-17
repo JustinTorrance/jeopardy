@@ -18,8 +18,8 @@ const playerThreeName = document.querySelector('.player-three-name');
 const playerOneScore = document.querySelector('.player-one-score');
 const playerTwoScore = document.querySelector('.player-two-score');
 const playerThreeScore = document.querySelector('.player-three-score');
-let activeQuestion;
 
+let activeQuestion;
 let playerOne;
 let playerTwo;
 let playerThree;
@@ -181,6 +181,11 @@ resetBtn.addEventListener('click', function() {
   document.querySelector('.audio-intro').pause();
 });
 
+gameBoard.addEventListener('click', gameBoardDelegator);
+
+hostBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+
 function dailyDoubleRandomizer() {
   console.log('daily double invoked')
   let multBy20 = Math.floor(Math.random() * 20);
@@ -188,4 +193,3 @@ function dailyDoubleRandomizer() {
   console.log('durble:', multBy20)
 }
 
-gameBoard.addEventListener('click', gameBoardDelegator);
