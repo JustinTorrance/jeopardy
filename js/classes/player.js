@@ -10,9 +10,9 @@ class Player extends Game {
   submitAnswer(answer) {
     let activeQuestion = questionsArray.find((currentQuestion) => {
       if (currentQuestion.active === true) {
-        return currentQuestion
+        return currentQuestion;
       }
-    })
+    });
     if (activeQuestion.answer.toLowerCase().includes(answer.toLowerCase()) && answer !== '') {
       newGame.players.find((currentPlayer) => {
         if (currentPlayer.active) {
@@ -20,7 +20,7 @@ class Player extends Game {
           domUpdates.updateNamesAndScores();
           currentPlayer.active = false;
         }
-      })
+      });
     } else {
       newGame.players.find((currentPlayer) => {
         if (currentPlayer.active) {
@@ -28,7 +28,7 @@ class Player extends Game {
           domUpdates.updateNamesAndScores();
           currentPlayer.active = false;
         }
-      })
+      });
     }
     activeQuestion.active = false;
     newGame.incrementTurn();
@@ -37,11 +37,11 @@ class Player extends Game {
       if (currentPlayer.active) {
         return currentPlayer;
       }
-    })
+    });
     domUpdates.updateHostPrompt(`${activePlayer.playerName}, Please select the next question from the game board!`)
   }
 }
 
 if (typeof module !== 'undefined') {
-module.exports = Player;
+  module.exports = Player;
 }
