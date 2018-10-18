@@ -18,6 +18,8 @@ const playerThreeName = document.querySelector('.player-three-name');
 const playerOneScore = document.querySelector('.player-one-score');
 const playerTwoScore = document.querySelector('.player-two-score');
 const playerThreeScore = document.querySelector('.player-three-score');
+let hostAlex = document.querySelector('.host-alex');
+
 
 let playerOne;
 let playerTwo;
@@ -52,12 +54,6 @@ submitBtn.addEventListener('click', function(e) {
   }
 });
 
-var hostAlex = document.querySelector('.host-alex');
-
 hostAlex.addEventListener('click', function() {
-    document.querySelector('.host-alex').src="images/will.png"
-  });
-
-//add event listener on host-image
-//alex.jpg = hidden
-// img source = will-ferrel
+  document.querySelector('.host-alex').src="images/will.png"
+});
