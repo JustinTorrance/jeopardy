@@ -1,8 +1,8 @@
 class Game {
-  constructor(round, players, gameState) {
-   this.round = 1;
+  constructor(round) {
+   this.round = round;
    this.gameState = 'standby';
-   this.players = players;
+   this.players = [];
    this.catOneClues;
    this.catTwoClues;
    this.catThreeClues;
@@ -15,9 +15,6 @@ class Game {
 
   init() {
     domUpdates.updateHostPrompt('Player One, enter your name below!');
-    playerOne = new Player(undefined, undefined, undefined, 1);
-    playerTwo = new Player(undefined, undefined, undefined, 2);
-    playerThree = new Player(undefined, undefined, undefined, 3);
     this.roundOneCategories = this.setCategories();
     this.createClueArrays();
     this.dailyDoubleRandomizer();
@@ -26,12 +23,8 @@ class Game {
     domUpdates.updateCategories();
   }
 
-  incrementTurn() {
-    if (this.playerIndex === 2) {
-      this.playerIndex = 0;
-    } else {
-      this.playerIndex++;
-    };
+  incrementTurn() { 
+    this.playerIndex === 2 ? this.playerIndex = 0 : this.playerIndex++; 
   }
 
   submitConditional(answer) {
@@ -75,20 +68,6 @@ class Game {
     document.querySelector('.audio-intro').play();
   }
 
-  createClueArray(catNum) {
-    let pointVal = 100;
-    let clueArr = data.clues.reduce((arr, currentClue) => {
-      if (currentClue.categoryId === catNum && pointVal === currentClue.pointValue) {
-        arr.push(currentClue);
-        questionsArray[this.questionIndex] = new Question(undefined, [], 'running', questionsArray[this.questionIndex], currentClue.categoryId, currentClue.question, currentClue.answer, currentClue.pointValue);
-        pointVal += 100;
-        this.questionIndex++;
-      };
-      return arr;
-    }, []);
-    return clueArr;
-  }
-
   setCategories() {
     let categoriesArray = []
     Object.keys(data.categories).forEach((currentKey) => {
@@ -97,6 +76,20 @@ class Game {
       };
     });
     return categoriesArray
+  }
+
+  createClueArray(catNum) {
+    let pointVal = 100;
+    let clueArr = data.clues.reduce((arr, currentClue) => {
+      if (currentClue.categoryId === catNum && pointVal === currentClue.pointValue) {
+        arr.push(currentClue);
+        questionsArray[this.questionIndex] = new Question(undefined, currentClue.categoryId, currentClue.question, currentClue.answer, currentClue.pointValue);
+        pointVal += 100;
+        this.questionIndex++;
+      };
+      return arr;
+    }, []);
+    return clueArr;
   }
 
   createClueArrays() {
@@ -122,7 +115,7 @@ class Game {
       } else if (currentQuestion.question === e.target.childNodes[1].innerHTML) {
         selectedQuestion = currentQuestion;
         selectedQuestion.active = true;
-      };
+      } 
     });
     gameBoardArray.find((currentTD) => {
       if (e.target.classList.contains(currentTD)) {
@@ -142,6 +135,26 @@ class Game {
         return currentQuestion
       };
     });
+  }
+
+  playerInstantiation() {
+    if (hostPrompt.innerText.includes('Player One')) {
+      playerOne = new Player(undefined, 1, userInput.value, true);
+      this.players.push(playerOne);
+      userInput.value = '';
+      domUpdates.updateHostPrompt('Player Two, enter your name!');
+    } else if (hostPrompt.innerText.includes('Player Two')) {
+      playerTwo = new Player(undefined, 2, userInput.value);
+      this.players.push(playerTwo);
+      userInput.value = '';
+      domUpdates.updateHostPrompt('Player Three, enter your name!');
+    } else if (hostPrompt.innerText.includes('Player Three')) {
+      playerThree = new Player(undefined, 3, userInput.value);
+      userInput.value = '';
+      this.players.push(playerThree);
+      domUpdates.updateNamesAndScores()
+      domUpdates.updateHostPrompt(`${playerOne.playerName}, pick a category dollar amount`);
+    };
   }
 }
 

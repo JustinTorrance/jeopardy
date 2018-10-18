@@ -1,6 +1,6 @@
 class Player extends Game {
-  constructor(round, players, gameState, playerNum, playerName, active) {
-    super(round, players, gameState);
+  constructor(round, playerNum, playerName, active) {
+    super(round);
     this.playerNum = playerNum;
     this.score = 0;
     this.playerName = playerName || `player ${this.playerNum}`;
@@ -13,7 +13,7 @@ class Player extends Game {
         return currentQuestion
       }
     })
-    if (activeQuestion.answer.toLowerCase().includes(answer.toLowerCase())) {
+    if (activeQuestion.answer.toLowerCase().includes(answer.toLowerCase()) && answer !== '') {
       newGame.players.find((currentPlayer) => {
         if (currentPlayer.active) {
           currentPlayer.score += activeQuestion.pointValue;

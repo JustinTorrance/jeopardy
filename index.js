@@ -22,7 +22,7 @@ const playerThreeScore = document.querySelector('.player-three-score');
 let playerOne;
 let playerTwo;
 let playerThree;
-let newGame = new Game(1, [], 'running');
+let newGame = new Game(1);
 
 const gameBoardArray = ['category-1-1', 'category-1-2', 'category-1-3', 'category-1-4', 'category-1-5', 'category-2-1', 'category-2-2', 'category-2-3', 
 'category-2-4', 'category-2-5', 'category-3-1', 'category-3-2', 'category-3-3', 'category-3-4', 'category-3-5', 'category-4-1', 'category-4-2', 
@@ -34,8 +34,7 @@ let questionsArray = ['question1', 'question2', 'question3', 'question4', 'quest
 'question19', 'question20'];
 
 resetBtn.addEventListener('click', function() {
-  newGame = new Game(0, [], 'standby');
-  document.querySelector('.audio-intro').pause();
+  location.reload();
 });
 
 gameBoard.addEventListener('click', newGame.gameBoardDelegator);
@@ -46,22 +45,8 @@ startBtn.addEventListener('click', function() {
 
 submitBtn.addEventListener('click', function(e) {
   e.preventDefault();
-  if (hostPrompt.innerText.includes('Player One')) {
-    playerOne = new Player(undefined, undefined, undefined, 1, userInput.value, true);
-    newGame.players.push(playerOne);
-    userInput.value = '';
-    domUpdates.updateHostPrompt('Player Two, enter your name!');
-  } else if (hostPrompt.innerText.includes('Player Two')) {
-    playerTwo = new Player(undefined, undefined, undefined, 2, userInput.value);
-    newGame.players.push(playerTwo);
-    userInput.value = '';
-    domUpdates.updateHostPrompt('Player Three, enter your name!');
-  } else if (hostPrompt.innerText.includes('Player Three')) {
-    playerThree = new Player(undefined, undefined, undefined, 3, userInput.value);
-    userInput.value = '';
-    newGame.players.push(playerThree);
-    domUpdates.updateNamesAndScores()
-    domUpdates.updateHostPrompt(`${playerOne.playerName}, pick a category dollar amount`);
+  if (playerThree === undefined) {
+    newGame.playerInstantiation();
   } else {
     newGame.submitConditional(userInput.value);
   };
