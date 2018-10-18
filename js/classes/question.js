@@ -16,13 +16,13 @@ class Question extends Game {
       this.dailyDouble = false;
       let wager = parseInt(userInput.value);
       this.pointValue = wager;
-      domUpdates.updateHostPrompt(`${this.question}`)
+      domUpdates.updateHostPrompt(`${this.question}`);
     } else {
-      domUpdates.updateHostPrompt(`That's an invalid wager! Please enter a wager between 5 and ${newGame.activePlayer().score}.`)
+      domUpdates.updateHostPrompt(`That's an invalid wager! Please enter a wager between 5 and ${newGame.activePlayer().score}.`);
     }
   }
 }
 
 if (typeof module !== 'undefined') {
-module.exports = Question;
+  module.exports = Question;
 }

@@ -1,7 +1,6 @@
 class Game {
   constructor(round) {
    this.round = round;
-   this.gameState = 'standby';
    this.players = [];
    this.catOneClues;
    this.catTwoClues;
@@ -34,14 +33,14 @@ class Game {
     } else if (this.activeQuestion.dailyDouble) {
       this.activeQuestion.dailyDouble = false;
       this.activeQuestion.pointValue *= 2;
-      domUpdates.updateHostPrompt(`You selected the Daily Double! Since your score is below 5, we've doubled the dollar amount! ${this.activeQuestion.question}`)
+      domUpdates.updateHostPrompt(`You selected the Daily Double! Since your score is below 5, we've doubled the dollar amount! ${this.activeQuestion.question}`);
     } else if (playerOne.active) {
-      playerOne.submitAnswer(answer)
+      playerOne.submitAnswer(answer);
     } else if (playerTwo.active) {
-      playerTwo.submitAnswer(answer)
+      playerTwo.submitAnswer(answer);
     } else if (playerThree.active) {
-      playerThree.submitAnswer(answer)
-    };
+      playerThree.submitAnswer(answer);
+    }
     userInput.value = '';
   }
 
@@ -57,9 +56,9 @@ class Game {
 
   activePlayer() {
     let activePlayer = this.players.find((currentPlayer) => {
-    if (currentPlayer.active) {
-      return currentPlayer;
-      };
+      if (currentPlayer.active) {
+        return currentPlayer;
+      }
     });
   return activePlayer;
   }
@@ -69,13 +68,13 @@ class Game {
   }
 
   setCategories() {
-    let categoriesArray = []
+    let categoriesArray = [];
     Object.keys(data.categories).forEach((currentKey) => {
       if (!categoriesArray.includes(currentKey) && categoriesArray.length < 4) {
         categoriesArray.push(currentKey);
-      };
+      }
     });
-    return categoriesArray
+    return categoriesArray;
   }
 
   createClueArray(catNum) {
@@ -86,7 +85,7 @@ class Game {
         questionsArray[this.questionIndex] = new Question(undefined, currentClue.categoryId, currentClue.question, currentClue.answer, currentClue.pointValue);
         pointVal += 100;
         this.questionIndex++;
-      };
+      }
       return arr;
     }, []);
     return clueArr;
@@ -102,7 +101,6 @@ class Game {
   dailyDoubleRandomizer() {
     let multBy20 = Math.floor(Math.random() * 20);
     questionsArray[multBy20].dailyDouble = true;
-    console.log('double is question:', multBy20 + 1);
   }
 
   gameBoardDelegator(e) {
@@ -122,18 +120,18 @@ class Game {
         e.target.childNodes[0].remove();
         hostPrompt.innerHTML = e.target.innerHTML;
         hostPrompt.childNodes[0].classList.remove('hidden');
-      };
+      }
     });
     if (selectedQuestion.dailyDouble) {
-      newGame.submitConditional()
-    };
+      newGame.submitConditional();
+    }
   }
 
   findActiveQuestion() {
     newGame.activeQuestion = questionsArray.find((currentQuestion) => {
       if (currentQuestion.active === true) {
-        return currentQuestion
-      };
+        return currentQuestion;
+      }
     });
   }
 
@@ -152,13 +150,13 @@ class Game {
       playerThree = new Player(undefined, 3, userInput.value);
       userInput.value = '';
       this.players.push(playerThree);
-      domUpdates.updateNamesAndScores()
+      domUpdates.updateNamesAndScores();
       domUpdates.updateHostPrompt(`${playerOne.playerName}, pick a category dollar amount`);
-    };
+    }
   }
 }
 
 
 if (typeof module !== 'undefined') {
-module.exports = Game;
+  module.exports = Game;
 }

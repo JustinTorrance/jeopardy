@@ -49,5 +49,5 @@ submitBtn.addEventListener('click', function(e) {
     newGame.playerInstantiation();
   } else {
     newGame.submitConditional(userInput.value);
-  };
+  }
 });

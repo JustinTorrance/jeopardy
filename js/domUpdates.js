@@ -9,7 +9,7 @@ const domUpdates = {
   },
 
   updateHostPrompt(string) {
-    document.querySelector('.host-prompt').innerHTML = string;
+    hostPrompt.innerHTML = string;
   },
 
   updateCategories() {
