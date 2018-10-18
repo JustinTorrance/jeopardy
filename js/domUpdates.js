@@ -31,8 +31,9 @@ const domUpdates = {
     }):
     categoryNum === 4 ? catFourCluesNodes.forEach((currentNode, i) => {
       currentNode.innerHTML += `<span class="hidden">${newGame.catFourClues[i].question}</span>`;
-    })
+    }): console.log('error in updateCategoryQuestions domUpdates.js');
   },
+  
 
   populateGameBoard() {
     this.updateCategoryQuestions(1);
