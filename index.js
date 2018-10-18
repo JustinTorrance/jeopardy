@@ -51,3 +51,13 @@ submitBtn.addEventListener('click', function(e) {
     newGame.submitConditional(userInput.value);
   }
 });
+
+var hostAlex = document.querySelector('.host-alex');
+
+hostAlex.addEventListener('click', function() {
+    document.querySelector('.host-alex').src="images/will.png"
+  });
+
+//add event listener on host-image
+//alex.jpg = hidden
+// img source = will-ferrel
