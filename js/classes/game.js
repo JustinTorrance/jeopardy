@@ -27,6 +27,7 @@ class Game {
   incrementTurn() { 
     this.playerIndex === 2 ? this.playerIndex = 0 : this.playerIndex++; 
   }
+  //not entirely sure how to test things that are dependent on user clicks
 
   submitConditional(answer) {
     newGame.findActiveQuestion();
