@@ -45,14 +45,8 @@ class Game {
   }
 
   activatePlayer() {
-    if (this.playerIndex === 0) {
-      this.players[0].active = true;
-    } else if (this.playerIndex === 1) {
-      this.players[1].active = true;
-    } else if (this.playerIndex === 2) {
-      this.players[2].active = true;
-    } 
-  }
+    this.players[this.playerIndex].active = true;
+}
 
   activePlayer() {
     let activePlayer = this.players.find((currentPlayer) => {
@@ -106,6 +100,7 @@ class Game {
   gameBoardDelegator(e) {
     newGame.findActiveQuestion();
     let selectedQuestion;
+    //let checkQuestionText = domUpdates.checkQuestionText(currentQuestion, e.target.childNodes[1])
     questionsArray.forEach((currentQuestion) => {
       if (currentQuestion.question === e.target.childNodes[1].innerText) {
         selectedQuestion = currentQuestion;
@@ -131,6 +126,7 @@ class Game {
     newGame.activeQuestion = questionsArray.find((currentQuestion) => {
       if (currentQuestion.active === true) {
         return currentQuestion;
+        //return currentQuestion.active
       }
     });
   }
