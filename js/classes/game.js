@@ -49,7 +49,7 @@ class Game {
 
   activatePlayer() {
     this.players[this.playerIndex].active = true;
-}
+  }
 
   activePlayer() {
     let activePlayer = this.players.find((currentPlayer) => {
@@ -87,16 +87,6 @@ class Game {
     }, []);
     return clueArr;
   }
-
-  // createClueArray(catNum) {
-  //   let pointVal = 100;
-
-  //   data.clues.reduce((currentClue) => {
-  //     if (currentClue.categoryId === catNum && pointVal === currentClue.pointValue) {
-  //       questionsArray.push(currentClue);
-  //     }
-  //   }
-  // }
 
   createClueArrays(catOneNum, catTwoNum, catThreeNum, catFourNum) {
     this.catOneClues = this.createClueArray(catOneNum);
