@@ -20,7 +20,6 @@ const playerTwoScore = document.querySelector('.player-two-score');
 const playerThreeScore = document.querySelector('.player-three-score');
 let hostAlex = document.querySelector('.host-alex');
 
-
 let playerOne;
 let playerTwo;
 let playerThree;
