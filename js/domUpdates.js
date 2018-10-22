@@ -1,11 +1,11 @@
 const domUpdates = {  
   updateNamesAndScores() {
-      document.querySelector('.player-one-name').innerHTML = playerOne.playerName;
-      document.querySelector('.player-two-name').innerHTML = playerTwo.playerName;
-      document.querySelector('.player-three-name').innerHTML = playerThree.playerName;
-      document.querySelector('.player-one-score').innerHTML = `$${playerOne.score}`;
-      document.querySelector('.player-two-score').innerHTML = `$${playerTwo.score}`;
-      document.querySelector('.player-three-score').innerHTML = `$${playerThree.score}`;
+      playerOneName.innerText = playerOne.playerName;
+      playerTwoName.innerText = playerTwo.playerName;
+      playerThreeName.innerText = playerThree.playerName;
+      playerOneScore.innerText = `$${playerOne.score}`;
+      playerTwoScore.innerText = `$${playerTwo.score}`;
+      playerThreeScore.innerText = `$${playerThree.score}`;
   },
 
   updateHostPrompt(string) {

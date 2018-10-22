@@ -18,18 +18,16 @@ const playerThreeName = document.querySelector('.player-three-name');
 const playerOneScore = document.querySelector('.player-one-score');
 const playerTwoScore = document.querySelector('.player-two-score');
 const playerThreeScore = document.querySelector('.player-three-score');
-let hostAlex = document.querySelector('.host-alex');
+const hostAlex = document.querySelector('.host-alex');
+const newGame = new Game();
+const gameBoardArray = ['category-1-1', 'category-1-2', 'category-1-3', 'category-1-4', 'category-1-5', 'category-2-1', 'category-2-2', 'category-2-3', 
+'category-2-4', 'category-2-5', 'category-3-1', 'category-3-2', 'category-3-3', 'category-3-4', 'category-3-5', 'category-4-1', 'category-4-2', 
+'category-4-3', 'category-4-4', 'category-4-5'];
 
 let questionsArray = [];
 let playerOne;
 let playerTwo;
 let playerThree;
-let newGame = new Game();
-
-const gameBoardArray = ['category-1-1', 'category-1-2', 'category-1-3', 'category-1-4', 'category-1-5', 'category-2-1', 'category-2-2', 'category-2-3', 
-'category-2-4', 'category-2-5', 'category-3-1', 'category-3-2', 'category-3-3', 'category-3-4', 'category-3-5', 'category-4-1', 'category-4-2', 
-'category-4-3', 'category-4-4', 'category-4-5'];
-
 
 resetBtn.addEventListener('click', function() {
   location.reload();
